@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calc</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/media.css">
+</head>
+<body>
+	<header><h1>Calculator</h1></header>
+	<main>
+		<div class="container">
+			<div class="hint">
+				<h2 class="title">How to use</h2>
+			<ul class="sidebar">
+				<li>1. Press the number</li>
+				<li>2. Press math operation</li>
+				<li>3. Press the number</li>
+				<li>4. Press the equal sign</li>			
+				<li>5. Get result</li>				
+			</ul>
+			</div>
+			<div class="wrapper-calc">
+				<div class="calculator">
+					<div class="ceiling"></div>
+					<input class="value" type="text" disabled>
+					<div class="buttons">
+						<button class="btn-ce" value="CE">CE</button>
+					    <button value="sqrt">&radic;</button>
+					    <button value="%">%</button>
+						<button value="/">/</button>
+				
+						<button value="7">7</button>
+					    <button value="8">8</button>
+					    <button value="9">9</button>
+						<button value="*">*</button>
+					
+						<button value="4">4</button>
+					    <button value="5">5</button>
+					    <button value="6">6</button>
+						<button value="-">-</button>
+					
+						<button value="1">1</button>
+					    <button value="2">2</button>
+					    <button value="3">3</button>
+						<button class="big-plus" value="+">+</button>
+					
+						<button value="0">0</button>
+					    <button value=".">.</button>
+					    <button value="=">=</button>
+					</div>		
+				</div>
+			</div>
+		<div class="wrapper-instruction">
+			<div class="use">
+				<h2>How to use</h2>
+				<ul class="instruction">
+					<li>1.Press the number button to select the first value</li>
+					<li>2.Press math operation</li>
+					<li>3.Press the number button to select the second value</li>
+					<li>4.Press the equal sign (to get the result you <span>can not press</span> any other operator)</li>
+					<li>5.Get result</li>				
+				</ul>
+				<div class="notice">
+					<p><i>Notice:</i> If you make a mistake with a finite number and want to delete it, click the button <b>CE</b>. This will allow you to clear the last number, provided that your number does not exceed the number of characters greater than 3, otherwise the number will be reset.</p>
+				</div>
+			</div>
+		</div>
+	
+	</div>
+	</main>
+<script src="js/script.js"></script>
+</body>
+</html>
