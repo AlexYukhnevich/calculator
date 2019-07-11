@@ -31,6 +31,7 @@ class Calculator {
 					return this.ce('Invalid');
 				}
 			} 
+			this.operatorValue = null;
 			this.x = Math.sqrt(this.x);
 			this.acc = this.x;
 			const result = +(this.x).toFixed(10);
@@ -63,7 +64,7 @@ const calculator = new Calculator();
 
 calc.addEventListener('click', function(e) {
 	let number = '';
-	const value = e.target.getAttribute('data-value');
+	let value = e.target.getAttribute('data-value');
 	const digit = e.target.classList.contains('num');
 	const operator = e.target.classList.contains('operator');
 	if (digit) {
@@ -94,11 +95,18 @@ calc.addEventListener('click', function(e) {
 	}
 	else if (value === calculator.radical) {
 		input.value = calculator.sqrt();
+		value = null;
 	}
 	else if (operator && !calculator.operator) {
 		calculator.operator = true;
 		calculator.operatorValue = value;
 		calculator.assignBool = false;
+		if (calculator.x.length > 0 && calculator.x.indexOf(calculator.float) === calculator.x.length - 1){
+			calculator.x = calculator.x.slice(0, -1);
+		} 
+		if (calculator.y.length > 0 && calculator.y.indexOf(calculator.float) === calculator.y.length - 1 ) {
+			calculator.y = calculator.y.slice(0, -1);
+		}
 	}
 	else if (value === calculator.float) {
 		calculator.x = calculator.x.toString();

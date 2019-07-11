@@ -59,6 +59,7 @@ h1 {
 	max-width: 1040px;
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	position: relative;
 	margin: 0 auto;
 }
