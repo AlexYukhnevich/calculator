@@ -18,6 +18,10 @@
 	font-weight: bold;
 	font-style: normal;
 }
+:root {
+	--header-height: 50px;
+	--calc-height: 340px;
+}
 
 * {
 	box-sizing: border-box;
@@ -31,6 +35,9 @@ body {
 
 header {
    width: 100%;
+   height: var(--header-height);
+   display: flex;
+   align-items: center;
    background-color: #222222;
 }
 
@@ -38,14 +45,13 @@ h1 {
 	font-family: 'DS-Digital', sans-serif;
 	font-size: 40px;
 	margin: 0 auto;
-	padding: 20px;
 	text-align: center;
 	text-transform: capitalize;
 	color: #00EF11;
 }
 
-main {
-	/* height: 100vh; */
+.main {
+	height: calc(100vh - var(--header-height));
 	background-color: #00ADEB;
 }
 
@@ -59,7 +65,7 @@ main {
 
 .calculator {
 	width: 270px;
-	height: 340px;
+	height: var(--calc-height);
 	margin: 5%;
 	border-radius: 15px;
 	background: linear-gradient(90deg, #fefefe, #333333);

@@ -158,12 +158,3 @@ calc.addEventListener('click', function(e) {
 });
 
 
-window.addEventListener("orientationchange", function() {
-	const main = document.querySelector('.main');
-	const heightCalc = parseInt(getComputedStyle(document.querySelector('.calculator')).height);
-	const heightMain = parseInt(getComputedStyle(main).height);
-	if (heightCalc > heightMain) {
-		main.style.height = heightCalc + 50 + 'px';
-	} 
-});
-
