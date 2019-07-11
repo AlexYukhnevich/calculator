@@ -18,170 +18,162 @@
 	font-weight: bold;
 	font-style: normal;
 }
-*{
+
+* {
 	box-sizing: border-box;
 }
+
 body {
 	font-family: sans-serif;
 	margin: 0;
 	padding: 0;
 }
+
 header {
-   background-color: #000000;
    width: 100%;
+   background-color: #222222;
 }
+
 h1 {
-	color: #00EF11;
+	font-family: 'DS-Digital', sans-serif;
 	font-size: 40px;
-	text-transform: capitalize;
-	max-width: 1040px;
 	margin: 0 auto;
 	padding: 20px;
 	text-align: center;
+	text-transform: capitalize;
+	color: #00EF11;
 }
+
 main {
-	background-color: #00ADEB;
 	height: 100vh;
+	background-color: #00ADEB;
 }
+
 .container {
 	max-width: 1040px;
-	margin: 0 auto;
-	display: flex;
-	justify-content: space-around;
-	position: relative;
-}
-.wrapper-calc{
 	display: flex;
 	justify-content: center;
-	width: 40%;
+	position: relative;
+	margin: 0 auto;
 }
+
 .calculator {
 	width: 270px;
 	height: 340px;
-	background-color: beige;
+	margin: 5%;
 	border-radius: 15px;
-	box-shadow: 2px 2px 10px #000;
-	margin-top: 50px;
+	background: linear-gradient(90deg, #fefefe, #333333);
+	box-shadow: 2px 6px 2px #222222, 4px 8px 2px #444444;
 }
-.ceiling{
-	width: 100%;
-}
+
 .value {
-	width: 216px;
+	width: 80%;
 	display: block;
-	margin: 27px;
+	margin: 27px auto;
 	padding: 10px;
 	font-family: 'DS-Digital', sans-serif;
 	font-weight: bold;
 	font-size: 30px;
 	border-radius: 4px;		
 	border: none;
-	color: #505058;
 	background-color: #BCC598;
 	box-shadow: inset 2px 2px 10px #000;
 }
 .buttons {
-	width: 226px;
+	width: 80%;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-areas:
+	"ce radic modulo div"
+	"seven eight nine mult"
+	"four five six sub"
+	"one two three add"
+	"zero float equal add";
 	margin: 0 auto;
 } 
-button {
+
+.radic {
+	grid-area: radic;
+}
+.modulo {
+	grid-area: modulo;
+}
+.division {
+	grid-area: div;
+}
+/* NUMBERS */
+.zero {
+	grid-area: zero;
+}
+.one {
+	grid-area: one;
+}
+.two {
+	grid-area: two;
+}
+.three {
+	grid-area: three;
+}
+.four {
+	grid-area: four;
+}
+.five {
+	grid-area: five;
+}
+.six {
+	grid-area: six;
+}
+.seven {
+	grid-area: seven;
+}
+.eight {
+	grid-area: eight;
+}
+.nine {
+	grid-area: nine;
+}
+.multiplication{
+	grid-area: mult;
+}
+.subtraction {
+	grid-area: sub;
+}
+.addition {
+	grid-area: add;
+}
+.float {
+	grid-area: float;
+}
+.equal {
+	grid-area: equal;
+}
+
+.btn {
 	width: 45px;
 	height: 34px;
 	font-size: 20px;
-	background-color: #6B6B6B;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #333333;
 	color: #fff;
-	border: none;
 	border-radius: 5px;
 	margin: 4px;
-	box-shadow: 1px 1px 5px #000;
-	outline: none;
+	box-shadow: 1px 3px 4px #000;
 	cursor: pointer;
-	transition: 0.5s;
 }
-.big-plus {
-	height: 76px;
-	float: right;
+
+.btn:hover {
+	opacity: 0.7;
 }
-.btn-ce {
+
+.ce {
+	grid-area: ce;
 	background-color: #D37A61;
 	box-shadow: 1px 1px 5px #A20404;
 }
-.wrapper-instruction{
-	width: 55%;
-}
-.use {
-	margin-top: 50px;
-}
-.use h2 {
-	font-size: 30px;
-	text-align: center;
-	margin: 0 auto;
-	margin-bottom: 30px;
-}
-.instruction {
-	background-color: beige;
-	padding: 0;
-	margin: 0 auto;
-	border-radius: 10px;
-	box-shadow:  1px 1px 5px #000;
-}
-.instruction > li {
-	padding: 10px 0 0 10px;
- 	border-bottom: 1px dotted #000;
- 	list-style: none;
-}
-.instruction > li:last-child{
-	border: none;
-	padding-bottom: 5px;
-}
-.instruction li span {
-	text-decoration: underline;
-	font-weight: bold;
-}
-.notice {
-	background-color: beige;
-	border-radius: 10px;
-	display: flex;
-	align-items: center;
-	width: 100%;
-	margin: 20px auto;
-	box-shadow:  1px 1px 5px #000;
-}
-.notice p {
-	margin: 10px;
-}
-.hint {
-	display: none;
-}
-.title{
-	text-transform: uppercase;
-	margin: 0;
-	padding: 20px;
-	cursor: pointer;
-	transition: 0.2s;
+
+.addition {
+	height: 76px;
 }
 
-.title-active {
-	color: beige;
-}
-
-.sidebar {
-	position: absolute;
-	top: 52px;
-	left: 0;
-	width: 200px;
-	height: 180px;
-	transform: translateX(-100%);
-	transition: 0.5s;
-	background-color: #0B0B0A;
-	padding: 0;
-}
-.sidebar li {
-	list-style: none;
-	color: #00F912;
-    margin: 15px 0 15px 10px;
-	text-transform: capitalize;
-}
-.sidebar-active {
-	transform: translateX(0%);
-}
