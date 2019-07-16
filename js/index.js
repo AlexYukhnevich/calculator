@@ -86,7 +86,7 @@ calc.addEventListener('click', function(e) {
 			input.value = calculator.y;
 		}
 	}
-	else if (value === '-' && calculator.x === calculator.emptyValue) {
+	else if (value === '-' && calculator.x === calculator.emptyValue || value === '-' && calculator.x.indexOf(value) !== -1) {
 		calculator.x = '-';
 		input.value = calculator.x;
 	}
@@ -163,6 +163,7 @@ calc.addEventListener('click', function(e) {
 		}
 	}	
 	number = '';
+	console.dir(calculator);
 });
 
 
